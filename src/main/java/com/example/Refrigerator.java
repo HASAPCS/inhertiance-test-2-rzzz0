@@ -2,23 +2,25 @@ package com.example;
 
 // TODO: make this class extend Appliance
 
-public class Refrigerator {
+public class Refrigerator extends Appliance{
     // Additional attributes
     private int temperature;
 
-    // Constructor
-    // TODO: Initialize the Refrigerator with brand, model, power usage, temperature
+    public Refrigerator (String brand, String model, int powerUsage, int temperature){
+        super(brand, model, powerUsage); 
+        this.temperature = temperature;
+    }
+    public int getTemperature(){
+        return this.temperature;
+    }
+    public int getPowerUsage(){
+        return this.powerUsage();
+    } 
 
-    // Override displayInfo Method from Appliance
-    // TODO: Implement a method that extends the information display to include the refrigerator's specific details (temperature)
+    public String displayInfo(){
+        return "Brand: " + this.getBrand() + ", " + "Model: " + this.getModel() + ", " + "Power Usage: " + this.getPowerUsage() + " Watts" + ", "+ "Temperature: "+ this.getTemperature() + "°C";
+    }
 
-    // setTemperature Method
-    // TODO: Implement a method to set the temperature of the refrigerator
-
-
-
-    // Optional Bonus Tasks for additional marks:
-    // =========================================
 
     // TODO (Bonus): Add two additional attributes: `foodItems` (a String array) and `itemCount` (an int).
     // `foodItems` will hold the names of food items in the refrigerator, and `itemCount` will track the number of items.
